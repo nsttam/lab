@@ -1,0 +1,49 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}"/>
+
+</head>
+
+
+<body>
+
+<h1 align="center">Ma première vue Twig</h1>
+
+<img src="{{asset('image/logo.png')}}">
+
+<h3>{{formation}}</h3>
+<h3>{{lieu}}</h3>
+<h3>{{date}}</h3>
+
+<hr>
+<h2>Liste des candidats</h2>
+{% if noms %}
+        <ol>
+        {% for nom in noms %}
+        <li>{{nom|upper}} </li>
+        {% endfor %}
+        </ol>
+{% else %}
+<h2>Liste vide</h2>
+{% endif %}     
+<h2>Liste des candidats</h2>
+
+
+<table border="1">
+<tr><th>ID</th><th>prenom</th><th>Nom</th>
+{% for c in candidats %}
+<tr>
+    <td><a href="{{path('showDetailsCandidat',{id:c.id})}}">{{c.id}}<a></td>
+    <td>{{c.prenom}}</td>
+    <td>{{c.nom}}</td>
+   
+</tr>
+{% else %}
+
+{% endfor %}     
+
+</table>
+
+</body>
+
+</html>

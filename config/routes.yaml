@@ -1,0 +1,10 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+first_controller_userID_route:
+    path: /first/userid
+    controller: App\Controller\FirstController::userID
+
+first_controller_formation_route:
+    path: /first/formation/{formation}/{numero}
+    controller: App\Controller\FirstController::formation

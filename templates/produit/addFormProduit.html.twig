@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProduitController!{% endblock %}
+
+{% block body %}
+
+<!--action est le path, pas le name <form method="post" action="addFormProduit">-->
+
+<form method="post" action="{{path('formAjout')}}">
+
+    <table align="center">
+        <tr>
+        <td>Libelle</td><td><input type="text" name="libelle"/></td>
+        </tr>
+        <tr>
+        <td>Prix</td><td><input type="text" name="prix"/></td>
+        </tr>
+        <tr>
+        <td>Description</td><td><textarea name="description" cols="22" rows="10">Description</textarea></td>
+        </tr>
+        <tr>
+        <td><input type="submit" value="Ajouter"/></td><td></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

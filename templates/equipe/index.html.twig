@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EquipeController!{% endblock %}
+
+
+{% block body %}
+<h1> Liste des equipes </h1>
+    <table align="center" border="1">
+    <tr><th>ID</th><th>Nom</th><th>Specialite</th><th>Nb jouers</th><th>Pays</th><th>Details</th></tr>
+
+    {% for equipe in equipes %}
+    <tr>
+        <td>{{equipe.id}}</td>
+        <td>{{equipe.nom}}</td>
+        <td>{{equipe.specialite}}</td>
+        <td>{{equipe.nbrJoueurs}}</td>
+        <td>{{equipe.pays}}</td>
+        <td><a href="{{path('equipes'~'show', {id:equipe.id})}}">Click</a></td>
+    </tr>
+    {% endfor %}
+
+    </table>
+{% endblock %}
+

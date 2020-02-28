@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProduitController!{% endblock %}
+
+{% block body %}
+
+<!--action est le path, pas le name <form method="post" action="addFormProduit">-->
+<h3></h3>
+<form method="post" action="{{path('updateInsertProduit')}}">
+<input type="hidden" name="idprod" value="{{produit.id}}"/>
+
+    <table align="center">
+        <tr>
+        <td>Libelle</td><td><input type="text" name="libelle" value="{{produit.libelle}}"/></td>
+        </tr>
+        <tr>
+        <td>Prix</td><td><input type="text" name="prix" value="{{produit.prix}}"/></td>
+        </tr>
+        <tr>
+        <td>Description</td><td><textarea name="description" cols="22" rows="10">{{produit.description}}</textarea></td>
+        </tr>
+        <tr>
+        <td><input type="submit" value="Update"/></td><td></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

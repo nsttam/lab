@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProduitController!{% endblock %}
+
+{% block body %}
+
+<table align="center" border="1">
+<tr>
+<th>ID</th>
+<th>LIBELLE</th>
+<th>PRIX</th>
+<th>DESCRIPTION</th>
+<th>details</th>
+<th>Suprimmer</th>
+<th>Update</th>
+</tr>
+
+{% for produit in produits %}
+<tr>
+<td>{{produit.id}}</td>
+<td>{{produit.libelle}}</td>
+<td>{{produit.prix}}</td>
+<td>{{produit.description}}</td>
+<td><a href="{{path('showproduit', {id:produit.id})}}">detail</a></td>
+<td><a href="{{path('deleteproduit', {id:produit.id})}}">Supprimer</a></td>
+<td><a href="{{path('updateProduit', {id:produit.id})}}">Update</a></td>
+</tr>
+
+{% endfor %}
+</table>
+{% endblock %}

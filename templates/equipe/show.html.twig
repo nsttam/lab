@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello{% endblock %}
+
+{% block body %}
+<h1> Liste des joueurs de {{equipe.nom}} </h1>
+<h2> Nb Joueurs {{joueurs|length}} </h2>
+
+<h3> Nb Joueurs {{total}} </h3>
+<table align="center" border="1">
+<tr><th>ID</th><th>Nom</th><th>Prenom</th><th>Numéro</th><th>Age</th></tr>
+
+{% for joueur in joueurs %}
+<tr>
+    <td>{{joueur.id}}</td>
+    <td>{{joueur.nom}}</td>
+    <td>{{joueur.prenom}}</td>
+    <td>{{joueur.numero}}</td>
+    <td>{{joueur.age}}</td>
+</tr>
+{% endfor %}
+
+</table>
+{% endblock %}
